@@ -1,0 +1,41 @@
+name: Publicar en GitHub Pages
+
+# Cada cambio que llegue a main vuelve a publicar el sitio.
+# También se puede lanzar a mano desde la pestaña Actions.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Si se acumulan varios despliegues, se ejecutan en orden y no se pisan.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  desplegar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # El sitio es estático: no hay build, se publica tal cual.
+      - name: Empaquetar el sitio
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Desplegar
+        id: despliegue
+        uses: actions/deploy-pages@v4
