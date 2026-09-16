@@ -1,0 +1,160 @@
+/* ==========================================================================
+   Tú al Volante · Guion del presentador
+   --------------------------------------------------------------------------
+   Estilos pensados para leer de reojo mientras se dicta: letra grande, mucho
+   aire, y una distinción visual inmediata entre lo que se DICE y lo que se HACE.
+   Carga después de estilos.css, de donde toma los tokens de color y tipografía.
+   ========================================================================== */
+
+body{background:var(--fondo)}
+
+/* ============================== ESTRUCTURA ============================= */
+.hoja{max-width:1080px;margin:0 auto;padding:0 var(--e5) var(--e8)}
+
+.cabecera-guion{
+  background:linear-gradient(160deg,var(--teal-900) 0%,var(--tinta) 100%);
+  color:var(--texto-inverso);
+  border-radius:0 0 var(--r-xl) var(--r-xl);
+  padding:var(--e7) var(--e7) var(--e6);
+  margin-bottom:var(--e6);
+}
+.cabecera-guion h1{color:#fff;font-size:clamp(30px,4vw,46px);margin-bottom:10px}
+.cabecera-guion .entrada{color:var(--texto-inverso-tenue);font-size:19px}
+.cabecera-guion .antetitulo{color:var(--ambar-claro)}
+.cabecera-guion .antetitulo::before{background:var(--ambar)}
+
+.volver{
+  display:inline-flex;align-items:center;gap:8px;color:var(--texto-inverso-tenue);
+  font-size:14.5px;margin-bottom:var(--e4);
+}
+.volver:hover{color:var(--ambar-claro);text-decoration:none}
+
+/* ============================ ÍNDICE RÁPIDO =========================== */
+.mapa{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;
+  margin:var(--e5) 0 var(--e7);
+}
+.mapa a{
+  background:var(--superficie);border:1px solid var(--linea);border-radius:var(--r-m);
+  padding:11px 14px;box-shadow:var(--sombra-1);color:var(--texto);
+}
+.mapa a:hover{border-color:var(--teal);text-decoration:none;background:var(--teal-50)}
+.mapa .m{display:block;font-family:var(--serif);font-weight:700;color:var(--ambar);font-size:14px}
+.mapa .t{font-size:14.5px;line-height:1.3;color:var(--texto-medio)}
+
+/* ============================== BLOQUES =============================== */
+.bloque-guion{
+  background:var(--superficie);border:1px solid var(--linea);
+  border-radius:var(--r-l);box-shadow:var(--sombra-1);
+  padding:var(--e6) var(--e6) var(--e5);
+  margin-bottom:var(--e5);
+  scroll-margin-top:16px;
+}
+.cabecera-bloque{
+  display:flex;align-items:flex-start;gap:18px;
+  border-bottom:2px solid var(--linea-suave);padding-bottom:var(--e4);margin-bottom:var(--e5);
+}
+.reloj{
+  flex:0 0 auto;min-width:88px;text-align:center;
+  background:var(--teal-900);color:#fff;border-radius:var(--r-m);
+  padding:10px 12px;font-family:var(--serif);font-weight:700;font-size:19px;line-height:1.1;
+}
+.reloj small{display:block;font-family:var(--sans);font-weight:400;font-size:10.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ambar-claro);margin-top:3px}
+.cabecera-bloque h2{font-size:27px;margin-bottom:6px}
+.cabecera-bloque .meta{font-size:15px;color:var(--texto-tenue);line-height:1.5}
+.cabecera-bloque .meta b{color:var(--teal-800)}
+
+/* --------- Lo que se DICE: el texto que se lee en voz alta ----------- */
+.dice{
+  position:relative;
+  font-size:19.5px;line-height:1.62;color:var(--texto);
+  border-left:5px solid var(--teal);
+  background:var(--teal-50);
+  border-radius:0 var(--r-m) var(--r-m) 0;
+  padding:15px 20px 15px 22px;
+  margin:0 0 12px;
+  max-width:none;
+}
+.dice + .dice{margin-top:-2px}
+.dice b{color:var(--teal-800)}
+.dice.clave{
+  background:var(--ambar-50);border-left-color:var(--ambar);
+  font-family:var(--serif);font-size:22px;line-height:1.45;
+}
+.dice.clave::after{
+  content:"se dice literal";
+  display:block;font-family:var(--sans);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:#8A4B0B;font-weight:700;margin-top:10px;
+}
+
+/* --------- Lo que se HACE: dirección escénica ------------------------ */
+.hace{
+  display:flex;gap:11px;align-items:flex-start;
+  font-size:16px;line-height:1.5;color:var(--texto-tenue);font-style:italic;
+  margin:0 0 12px;padding:2px 0 2px 22px;max-width:none;
+}
+.hace::before{content:"▸";font-style:normal;color:var(--ambar);margin-left:-22px;width:11px}
+
+/* --------- Apuntes y contingencias ---------------------------------- */
+.apunte{
+  border-radius:var(--r-m);padding:13px 17px;margin:16px 0 12px;
+  font-size:15.5px;line-height:1.5;background:var(--superficie-2);
+  border:1px solid var(--linea);
+}
+.apunte b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:5px}
+.apunte.riesgo{background:var(--rojo-50);border-color:#EFC9C6}
+.apunte.riesgo b{color:var(--rojo)}
+.apunte.pantalla{background:#F6F1FA;border-color:#E0D2EC}
+.apunte.pantalla b{color:#6B4E8E}
+
+/* --------- Transición al bloque siguiente ---------------------------- */
+.puente{
+  margin-top:var(--e5);border-top:2px dashed var(--linea);padding-top:var(--e4);
+  font-size:17.5px;color:var(--texto-medio);
+}
+.puente b{display:block;font-family:var(--sans);font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ambar);margin-bottom:6px}
+
+/* ============================ HERRAMIENTAS ============================ */
+.aviso-tiempo{
+  display:flex;gap:14px;align-items:center;
+  background:var(--teal-900);color:var(--texto-inverso);border-radius:var(--r-l);
+  padding:var(--e4) var(--e5);margin:var(--e5) 0;font-size:17px;line-height:1.45;
+}
+.aviso-tiempo .em{font-size:26px}
+.aviso-tiempo b{color:var(--ambar-claro)}
+
+.guion-lista{margin-top:var(--e3)}
+.guion-lista li{position:relative;padding-left:26px;margin-bottom:9px;font-size:16.5px;line-height:1.5}
+.guion-lista li::before{content:"";position:absolute;left:8px;top:10px;width:7px;height:7px;
+  border-radius:50%;background:var(--teal)}
+
+/* ============================= IMPRESIÓN ============================== */
+@media print{
+  body{background:#fff;font-size:11.5pt}
+  .cabecera-guion{background:#fff !important;color:var(--texto) !important;
+    border-bottom:3px solid var(--teal);border-radius:0;padding:0 0 12pt;margin-bottom:16pt}
+  .cabecera-guion h1{color:var(--teal-900)}
+  .cabecera-guion .entrada{color:var(--texto-medio)}
+  .cabecera-guion .antetitulo{color:var(--texto-tenue)}
+  .volver,.mapa,.arriba,.aviso-flotante{display:none !important}
+  .hoja{padding:0;max-width:none}
+  .bloque-guion{box-shadow:none;border:none;border-top:2px solid var(--linea);
+    border-radius:0;padding:14pt 0;margin:0;page-break-inside:avoid}
+  .reloj{background:#fff !important;color:var(--teal-900) !important;
+    border:2px solid var(--teal-900);border-radius:6pt}
+  .reloj small{color:var(--texto-tenue) !important}
+  .dice{background:#F4F7F7 !important;font-size:12pt}
+  .dice.clave{background:#FBF3E2 !important}
+  .aviso-tiempo{background:#F4F7F7 !important;color:var(--texto) !important;
+    border:1px solid var(--linea)}
+  .aviso-tiempo b{color:var(--teal-800) !important}
+}
+
+@media (max-width:760px){
+  .cabecera-bloque{flex-direction:column;gap:12px}
+  .bloque-guion{padding:var(--e5) var(--e4)}
+  .dice{font-size:18px}
+}

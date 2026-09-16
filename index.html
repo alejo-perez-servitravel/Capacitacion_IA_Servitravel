@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tú al Volante · Sesión 1: Encendido · Servitravel</title>
+<meta name="description" content="Capacitación interna de Servitravel en Inteligencia Artificial aplicada al trabajo diario. Sesión 1: Encendido.">
+<link rel="stylesheet" href="assets/css/estilos.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='none' stroke='%23D97919' stroke-width='12'/><circle cx='50' cy='50' r='18' fill='%230E7C86'/></svg>">
+</head>
+<body>
+
+<!-- ============================ BARRA SUPERIOR ============================ -->
+<header class="barra">
+  <button class="boton-barra abrir-menu" id="btn-menu" aria-label="Abrir el índice">☰</button>
+
+  <a href="#inicio" class="marca">
+    <span class="rueda" aria-hidden="true"></span>
+    <span>Tú al <em>Volante</em>
+      <small>Servitravel · Sesión 1</small>
+    </span>
+  </a>
+
+  <div class="separador"></div>
+
+  <div class="buscador">
+    <span class="lupa" aria-hidden="true">🔍</span>
+    <input type="search" id="buscador-global" placeholder="Buscar concepto, área o sección…  (tecla /)" aria-label="Buscar en la sesión">
+    <div id="resultados-busqueda" class="oculto" role="listbox"></div>
+  </div>
+
+  <a href="guion.html" class="boton-barra" title="Guion palabra por palabra de los 60 minutos">📋 <span>Guion</span></a>
+  <button class="boton-barra" id="btn-facilitador" aria-pressed="false" title="Muestra el guion, las claves de los ejercicios y los tiempos (tecla F)">
+    🎤 <span>Modo facilitador</span>
+  </button>
+  <button class="boton-barra" id="btn-imprimir" title="Imprimir o guardar en PDF">🖨</button>
+</header>
+
+<div class="velo" id="velo"></div>
+
+<div class="envoltorio">
+
+  <!-- ========================= ÍNDICE LATERAL ========================= -->
+  <aside class="lateral" id="lateral">
+    <div class="progreso">
+      <div class="etiqueta">
+        <span>Tu avance</span>
+        <span id="progreso-cifra">0%</span>
+      </div>
+      <div class="riel"><div class="barra-int" id="progreso-barra"></div></div>
+      <button id="progreso-reiniciar" style="font-size:12px;color:var(--texto-tenue);margin-top:8px;text-decoration:underline">Reiniciar</button>
+    </div>
+
+    <nav class="nav" id="nav" aria-label="Contenido de la sesión">
+      <p class="nav-grupo">Empieza aquí</p>
+      <a href="#inicio"><span class="indice">01</span><span>Portada de la sesión</span></a>
+      <a href="#encuadre"><span class="indice">02</span><span>Qué es y qué no es</span></a>
+
+      <p class="nav-grupo">Fundamentos</p>
+      <a href="#que-es"><span class="indice">03</span><span>Qué es la Inteligencia Artificial</span></a>
+      <a href="#como-aprende"><span class="indice">04</span><span>Cómo aprende: el niño y el perro</span></a>
+      <a href="#ya-la-usas"><span class="indice">05</span><span>La que ya usas sin darte cuenta</span></a>
+      <a href="#generativa"><span class="indice">06</span><span>Qué cambió: de clasificar a crear</span></a>
+      <a href="#como-funciona"><span class="indice">07</span><span>Cómo funciona por dentro</span></a>
+      <a href="#limites"><span class="indice">08</span><span>Por qué se equivoca</span></a>
+      <a href="#glosario"><span class="indice">09</span><span>Glosario de la sesión</span></a>
+
+      <p class="nav-grupo">Qué puede hacer por ti</p>
+      <a href="#familias"><span class="indice">10</span><span>Las seis familias de tareas</span></a>
+      <a href="#areas"><span class="indice">11</span><span>Tu área, paso a paso</span></a>
+
+      <p class="nav-grupo">Pedirle bien</p>
+      <a href="#claro"><span class="indice">12</span><span>La fórmula C.L.A.R.O.</span></a>
+      <a href="#universales"><span class="indice">13</span><span>Los cinco pedidos universales</span></a>
+      <a href="#biblioteca"><span class="indice">14</span><span>Biblioteca de prompts</span></a>
+
+      <p class="nav-grupo">Reglas de tránsito</p>
+      <a href="#regla-oro"><span class="indice">15</span><span>La regla de oro</span></a>
+      <a href="#semaforo"><span class="indice">16</span><span>El semáforo de la información</span></a>
+      <a href="#verificar"><span class="indice">17</span><span>Qué se verifica siempre</span></a>
+
+      <p class="nav-grupo">Practica y cierra</p>
+      <a href="#practica"><span class="indice">18</span><span>Ejercicios de la sesión</span></a>
+      <a href="#repaso"><span class="indice">19</span><span>Repaso de 6 preguntas</span></a>
+      <a href="#cierre"><span class="indice">20</span><span>Lo que te llevas</span></a>
+
+      <p class="nav-grupo">Solo para quien dicta</p>
+      <a href="#facilitador"><span class="indice">21</span><span>Guion, tiempos y montaje</span></a>
+    </nav>
+
+    <div class="nav-pie">
+      <b style="color:var(--texto-medio)">Atajos</b><br>
+      <kbd>/</kbd> buscar · <kbd>F</kbd> modo facilitador<br>
+      <kbd>Esc</kbd> cerrar
+      <p style="margin-top:12px">Material interno de Servitravel. Todos los ejemplos usan datos ficticios.</p>
+    </div>
+  </aside>
+
+  <!-- ============================ CONTENIDO ============================ -->
+  <main class="contenido">
+
+    <!-- 01 ----------------------------------------------------------- -->
+    <section class="seccion" id="inicio">
+      <div class="columna">
+        <div class="portada">
+          <p class="antetitulo">Sesión 1 de 3 · Ciclo corto</p>
+          <h1>Encendido</h1>
+          <p class="entrada">¿Qué es esto y qué puede hacer por mí? Una hora para entender de qué se trata la Inteligencia Artificial y salir habiéndola usado en algo tuyo.</p>
+
+          <div class="fichas">
+            <div class="ficha"><b>Facilita</b>Diego · Analista de transporte</div>
+            <div class="ficha"><b>Fecha</b>16 de septiembre de 2026</div>
+            <div class="ficha"><b>Duración</b>60 minutos</div>
+            <div class="ficha"><b>Te llevas</b>Tu primer resultado real</div>
+          </div>
+
+          <div class="acciones">
+            <a href="#que-es" class="boton">Empezar por los fundamentos →</a>
+            <a href="#areas" class="boton fantasma">Ir directo a mi área</a>
+          </div>
+        </div>
+
+        <div class="rejilla r3">
+          <article class="tarjeta">
+            <span class="icono">🎯</span>
+            <h3>Para qué sirve esta página</h3>
+            <p>Es el material completo de la sesión, para consultarlo durante la capacitación y para volver después, cuando tengas que resolver algo en tu puesto.</p>
+          </article>
+          <article class="tarjeta ambar">
+            <span class="icono">🧭</span>
+            <h3>Cómo recorrerla</h3>
+            <p>De arriba abajo la primera vez. Después, por el índice de la izquierda o por el buscador. Tu avance se guarda solo en este computador.</p>
+          </article>
+          <article class="tarjeta verde">
+            <span class="icono">🔒</span>
+            <h3>Una condición</h3>
+            <p>Todos los ejemplos usan datos inventados. Mientras practicas, tú haces lo mismo: ni un nombre real de cliente, pasajero, estudiante o conductor.</p>
+          </article>
+        </div>
+
+        <div class="nota-facilitador facilitador">
+          <div class="titulo-panel">🎤 Apertura en frío · minutos 0 a 5</div>
+          <p class="guion-hace">De pie, adelante, sin mirar la pantalla. Sin computador en la mano.</p>
+          <div class="guion-dice">Buenos días. Gracias por venir. Antes de empezar quiero contarles de dónde salió esto.</div>
+          <div class="guion-dice">Hace unas semanas me puse a mirar en qué se nos va el tiempo. Y encontré una cosa que se repite en todas las áreas: recepción, operaciones, contabilidad, documental, gerencia. Todas. Buena parte del día se nos va escribiendo lo mismo de otra manera. Un correo. Un informe. Un resumen de algo que ya está escrito en otro lado.</div>
+          <p class="guion-hace">Pausa de dos segundos.</p>
+          <div class="guion-dice">Esa parte del trabajo hoy se puede hacer en una fracción del tiempo. Y no hay que saber nada de tecnología para lograrlo. De eso se trata esto.</div>
+          <p class="guion-hace">Levanta tú la mano primero: la gente copia el gesto. Pregunta quién ha usado alguna herramienta de IA, aunque haya sido una vez. Cuenta en voz alta. Si hay pocas manos: "es exactamente el grupo para el que está diseñado esto". Si hay muchas: "que uno la haya usado no quiere decir que la esté usando bien".</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 ----------------------------------------------------------- -->
+    <section class="seccion" id="encuadre">
+      <div class="columna">
+        <p class="antetitulo">Encuadre</p>
+        <h2>Qué es y qué no es esta capacitación</h2>
+        <p class="entrada">Antes de mostrar nada conviene bajar las expectativas por un lado y subirlas por el otro. Nadie va a salir programando; todo el mundo va a salir usando la herramienta.</p>
+
+        <div class="rejilla r3">
+          <article class="tarjeta roja">
+            <span class="icono">🚫</span>
+            <h3>No es programación</h3>
+            <p>No vamos a ver una sola línea de código en las tres sesiones. Lo único que vas a escribir es español.</p>
+          </article>
+          <article class="tarjeta roja">
+            <span class="icono">🚫</span>
+            <h3>No es un curso técnico</h3>
+            <p>No vas a salir experto en tecnología. Tampoco lo necesitas para hacer mejor tu trabajo.</p>
+          </article>
+          <article class="tarjeta roja">
+            <span class="icono">🚫</span>
+            <h3>No es un anuncio de reemplazo</h3>
+            <p>La herramienta no firma, no decide y no responde ante un cliente. Tú sí.</p>
+          </article>
+        </div>
+
+        <div class="franja">
+          <span class="em" aria-hidden="true">✅</span>
+          <p>Lo que sí va a pasar: <b>vas a usar la IA en tu trabajo esta semana.</b> No en seis meses. Esta semana.</p>
+        </div>
+
+        <h3 class="bloque">Los cuatro verbos de la sesión</h3>
+        <div class="rejilla r4">
+          <article class="tarjeta"><div class="cifra">01</div><h3>Entender</h3><p>Qué es y qué no es, sin teoría de más.</p></article>
+          <article class="tarjeta"><div class="cifra">02</div><h3>Reconocer</h3><p>Dónde ya la estás usando sin saberlo.</p></article>
+          <article class="tarjeta"><div class="cifra">03</div><h3>Usar</h3><p>Tu primer pedido, hoy, en esta sala.</p></article>
+          <article class="tarjeta ambar"><div class="cifra">04</div><h3>Cuidar</h3><p>La única regla de seguridad que hay que memorizar.</p></article>
+        </div>
+
+        <h3 class="bloque">El recorrido de las tres sesiones</h3>
+        <div class="tabla-envoltura">
+          <table>
+            <thead><tr><th>Sesión</th><th>Título</th><th>La pregunta que responde</th></tr></thead>
+            <tbody>
+              <tr><td class="clave">Hoy</td><td>Encendido</td><td>¿Qué es esto y qué puede hacer por mí?</td></tr>
+              <tr><td class="clave">Sesión 2</td><td>Pedirle bien y no creerle todo</td><td>¿Cómo consigo que sirva y cómo sé si me miente?</td></tr>
+              <tr><td class="clave">Sesión 3</td><td>Tu trabajo, con IA</td><td>¿Qué hago en mi puesto sin poner en riesgo a la empresa?</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="aviso">
+          <h4>Por qué solo tres horas</h4>
+          <p>En tres horas no se puede enseñar todo sobre Inteligencia Artificial. Pero sí alcanza para lograr las dos cosas que importan: que la gente empiece a usarla y que no haga daño con ella. Todo lo que no aporta a esas dos cosas quedó por fuera a propósito.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 ----------------------------------------------------------- -->
+    <section class="seccion" id="que-es">
+      <div class="columna">
+        <p class="antetitulo t">Fundamentos</p>
+        <h2>Qué es la Inteligencia Artificial</h2>
+        <p class="entrada">Una sola definición, y que sirva para el resto de la vida laboral.</p>
+
+        <div class="cita ancha">
+          Software que aprende patrones a partir de ejemplos, en lugar de seguir reglas que una persona escribió una por una.
+          <cite>La definición que usamos en Servitravel</cite>
+        </div>
+
+        <p class="bloque">La diferencia está en de dónde salen las reglas. En un programa de toda la vida, alguien se sentó a escribirlas: <em>si el pasajero cancela con menos de dos horas, cobrar el 50 %</em>. En Inteligencia Artificial nadie escribe esa regla: el programa la deduce viendo miles de ejemplos.</p>
+
+        <div class="tabla-envoltura">
+          <table>
+            <thead><tr><th>&nbsp;</th><th>Programa tradicional</th><th>Inteligencia Artificial</th></tr></thead>
+            <tbody>
+              <tr><td class="clave">De dónde salen las reglas</td><td>Una persona las escribe una por una</td><td>El programa las deduce de los ejemplos</td></tr>
+              <tr><td class="clave">Qué pasa con un caso nuevo</td><td>Si no estaba previsto, falla</td><td>Intenta responder por parecido</td></tr>
+              <tr><td class="clave">Resultado</td><td>Siempre el mismo</td><td>Puede variar entre una vez y otra</td></tr>
+              <tr><td class="clave">Cuando se equivoca</td><td>Suele ser evidente</td><td>Suele sonar perfectamente razonable</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="aviso clave">
+          <h4>La fila que importa</h4>
+          <p>La última. Un programa tradicional que falla, falla feo y uno se da cuenta. Una IA que falla entrega un texto impecable, bien redactado y falso. Por eso existe todo el módulo de verificación.</p>
+        </div>
+
+        <div class="nota-facilitador facilitador">
+          <div class="titulo-panel">🎤 Cómo dictarlo · minutos 10 a 14</div>
+          <p class="guion-hace">Escribe la definición en el tablero antes de mostrar la tabla. Que quede a la vista toda la hora.</p>
+          <div class="guion-dice">Fíjense en la última fila, porque es la que les va a servir el resto del año: cuando un programa normal se equivoca, ustedes se dan cuenta. Cuando esta se equivoca, les entrega un párrafo perfecto que dice una mentira. Y eso no se nota leyendo bonito.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 ----------------------------------------------------------- -->
+    <section class="seccion" id="como-aprende">
+      <div class="columna">
+        <p class="antetitulo t">Fundamentos</p>
+        <h2>Cómo aprende: el niño y el perro</h2>
+        <p class="entrada">La analogía que explica, sin una palabra técnica, por qué la herramienta acierta casi siempre y por qué a veces se equivoca con total seguridad.</p>
+
+        <div class="flujo">
+          <div class="paso"><span class="icono">👀</span><h4>1. Ve ejemplos</h4><p>Al niño le señalan perros en la calle: “ese es un perro”. Cientos de veces.</p></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso"><span class="icono">🧩</span><h4>2. Saca el patrón</h4><p>Nadie le dictó la definición de perro. Él solo dedujo: cuatro patas, pelo, tamaño, hocico.</p></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso"><span class="icono">✅</span><h4>3. Generaliza</h4><p>Ve un perro que nunca había visto y lo reconoce. Eso es aprender.</p></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso"><span class="icono">🐺</span><h4>4. Se equivoca</h4><p>Ve un lobo y grita “¡perro!”. No miente: encaja con el patrón que él construyó.</p></div>
+        </div>
+
+        <div class="franja teal">
+          <span class="em" aria-hidden="true">💡</span>
+          <p>El niño no mintió. <b>Respondió con total seguridad algo que encajaba con su patrón y era falso.</b> Eso es exactamente lo que va a hacer la herramienta, varias veces, esta semana.</p>
+        </div>
+
+        <p class="bloque">Hay una consecuencia práctica importante: el niño aprendió de los perros que le mostraron. Si solo le mostraron perros grandes, va a dudar con un chihuahua. La herramienta aprendió de los textos que existen en internet, no de los procedimientos de Servitravel. Por eso, cuando le pides algo sin contexto, responde con el promedio del mundo, que no se parece a nuestra empresa.</p>
+
+        <div class="aviso">
+          <h4>De aquí salen dos cosas que vas a usar todo el tiempo</h4>
+          <p><strong>Una:</strong> hay que darle contexto, porque no conoce nuestra operación. <strong>Dos:</strong> hay que verificar, porque cuando no sabe, responde igual de convencida.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 ----------------------------------------------------------- -->
+    <section class="seccion" id="ya-la-usas">
+      <div class="columna">
+        <p class="antetitulo t">Fundamentos</p>
+        <h2>La IA que ya usas sin darte cuenta</h2>
+        <p class="entrada">Ninguna de estas te pidió saber de tecnología. Todas funcionan con el mismo principio del niño y el perro.</p>
+
+        <div class="rejilla r3">
+          <article class="tarjeta">
+            <span class="icono">🗺️</span><h3>El navegador del celular</h3>
+            <p>Predice el trancón antes de que lo veas y te cambia la ruta. Aprendió de millones de recorridos, no de un mapa escrito a mano.</p>
+          </article>
+          <article class="tarjeta">
+            <span class="icono">⌨️</span><h3>El teclado que adivina</h3>
+            <p>Te propone la palabra siguiente. Es el mismo principio de la herramienta que vamos a usar hoy, en pequeño.</p>
+          </article>
+          <article class="tarjeta">
+            <span class="icono">📧</span><h3>El filtro de correo basura</h3>
+            <p>Nadie escribió la lista de todos los correos basura del mundo. El programa aprendió a reconocerlos.</p>
+          </article>
+          <article class="tarjeta">
+            <span class="icono">🎬</span><h3>Las recomendaciones</h3>
+            <p>Lo que te sugiere la plataforma de video o de música sale de comparar tu comportamiento con el de mucha gente parecida.</p>
+          </article>
+          <article class="tarjeta">
+            <span class="icono">💳</span><h3>La alerta del banco</h3>
+            <p>Cuando bloquean una compra rara, un modelo detectó que ese movimiento no se parece a los tuyos.</p>
+          </article>
+          <article class="tarjeta">
+            <span class="icono">📷</span><h3>La cámara del celular</h3>
+            <p>Encuentra la cara, corrige la luz y mejora la foto. Todo eso es reconocimiento de patrones.</p>
+          </article>
+        </div>
+
+        <div class="aviso ok">
+          <h4>El punto de esta lámina</h4>
+          <p>Nadie en esta sala empieza de cero. Llevas años usando Inteligencia Artificial sin que nadie te pidiera un curso. Lo nuevo no es la tecnología: es que ahora se le puede pedir en español que haga una parte de tu trabajo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 ----------------------------------------------------------- -->
+    <section class="seccion" id="generativa">
+      <div class="columna">
+        <p class="antetitulo t">Fundamentos</p>
+        <h2>Qué cambió: de clasificar a crear</h2>
+        <p class="entrada">Todo lo anterior existe hace años. Lo que cambió hace poco, y por eso estamos en esta sala, es que ahora además produce contenido.</p>
+
+        <div class="rejilla r2">
+          <article class="tarjeta">
+            <span class="icono">📥</span>
+            <h3>IA tradicional · clasifica</h3>
+            <p>Mira algo y decide en qué caja va. ¿Es spam o no? ¿Es fraude o no? ¿Hay un peatón o no?</p>
+            <p class="tenue"><b>En transporte:</b> predecir a qué hora va a haber trancón en un corredor.</p>
+          </article>
+          <article class="tarjeta ambar">
+            <span class="icono">✨</span>
+            <h3>IA generativa · crea</h3>
+            <p>Produce algo que no existía: un texto, una tabla, un resumen, una traducción, un borrador.</p>
+            <p class="tenue"><b>En transporte:</b> redactar la circular que le explica ese cambio de horario a los acudientes.</p>
+          </article>
+        </div>
+
+        <p class="bloque">La segunda es la que vamos a usar. Y es la primera tecnología en mucho tiempo que no exige aprender una interfaz nueva: se le escribe en español, como a un compañero de trabajo por chat.</p>
+
+        <div class="franja">
+          <span class="em" aria-hidden="true">🗣️</span>
+          <p>Es la primera herramienta de la empresa donde <b>la habilidad que importa no es técnica: es saber explicar bien lo que uno necesita.</b> Y eso ya lo hacen todos los días con sus compañeros.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 ----------------------------------------------------------- -->
+    <section class="seccion" id="como-funciona">
+      <div class="columna">
+        <p class="antetitulo t">Fundamentos</p>
+        <h2>Cómo funciona por dentro, en dos minutos</h2>
+        <p class="entrada">No hace falta más que esto: la herramienta predice cuál es la palabra que sigue. Una tras otra, miles de veces, muy bien. Pruébalo aquí.</p>
+
+        <div class="predictor">
+          <p class="frase" id="predictor-frase"></p>
+          <div class="opciones-token" id="predictor-opciones"></div>
+          <p class="consejo" style="margin-top:18px">💡 <span id="predictor-nota"></span></p>
+        </div>
+
+        <div class="aviso clave">
+          <h4>Lo que acabas de ver</h4>
+          <p id="predictor-cierre"></p>
+        </div>
+
+        <h3 class="bloque">Un modelo grande de lenguaje, explicado para la sala</h3>
+        <p>Cuando alguien diga <strong>LLM</strong>, son las siglas en inglés de “modelo grande de lenguaje”. En español simple: un programa que leyó una cantidad enorme de texto y de ahí aprendió a predecir cuál es la palabra que sigue. Eso es literalmente todo lo que hace, encadenado miles de veces.</p>
+
+        <p>¿Y con eso basta para escribir un correo? Sí, y sorprende. Es la idea del teclado del celular llevada al extremo: en vez de haber visto tus mensajes, vio una cantidad gigantesca de texto; y en vez de proponer una palabra, encadena miles con una coherencia notable.</p>
+
+        <div class="cita">
+          La IA optimiza plausibilidad, no veracidad.
+          <cite>La frase bisagra. Es la respuesta corta a casi todo lo que sigue.</cite>
+        </div>
+
+        <p class="bloque">Fíjate en la consecuencia: si su trabajo es que la frase <em>suene</em> bien, no que la frase <em>sea</em> cierta, entonces cuando no sabe un dato lo completa con el que mejor suena. No se queda callada. No dice “no sé”. Rellena. Por eso se inventa cifras, normas y fechas con una seguridad total.</p>
+
+        <div class="nota-facilitador facilitador">
+          <div class="titulo-panel">🎤 Cómo dictarlo · minutos 22 a 26</div>
+          <p class="guion-hace">Haz clic en las opciones del predictor en vivo, una por una, empezando por la más probable.</p>
+          <div class="guion-dice">Ninguna de estas palabras salió de un dato de Servitravel. Salieron de cuál palabra suele ir después de esa frase en los millones de textos que leyó. Por eso la respuesta suena bien aunque sea falsa. Ahí está todo lo que hay que entender hoy.</div>
+          <p class="guion-hace">Si alguien pregunta por tokens, respóndelo en veinte segundos con la tarjeta del glosario y vuelve. No abras el tema.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 ----------------------------------------------------------- -->
+    <section class="seccion" id="limites">
+      <div class="columna">
+        <p class="antetitulo r">Fundamentos</p>
+        <h2>Por qué se equivoca y qué no sabe</h2>
+        <p class="entrada">Conocer los cinco límites reales evita el 90 % de los problemas. Ninguno es un defecto pasajero: son consecuencia de cómo está construida.</p>
+
+        <div class="rejilla r2">
+          <article class="tarjeta roja">
+            <span class="icono">🌀</span><h3>1. Alucina</h3>
+            <p>Inventa datos falsos y los presenta con total seguridad: cifras exactas, artículos de normas, fechas, nombres de estudios.</p>
+            <p class="tenue"><b>Señal de alerta:</b> cuanto más específico es un dato que tú no entregaste, más sospechoso es.</p>
+          </article>
+          <article class="tarjeta roja">
+            <span class="icono">📅</span><h3>2. Tiene fecha de corte</h3>
+            <p>Su conocimiento llega hasta cierta fecha. Lo posterior no lo sabe, salvo que la herramienta busque en internet en ese momento.</p>
+            <p class="tenue"><b>Consecuencia:</b> no le preguntes por normativa reciente sin verificar en la fuente.</p>
+          </article>
+          <article class="tarjeta roja">
+            <span class="icono">🔢</span><h3>3. Calcula mal</h3>
+            <p>Predice texto, no opera. Puede equivocarse en una resta simple y entregarla con la misma seguridad que el resto.</p>
+            <p class="tenue"><b>Regla:</b> toda cuenta se verifica en la hoja de cálculo. Sin excepción.</p>
+          </article>
+          <article class="tarjeta roja">
+            <span class="icono">🏢</span><h3>4. No conoce Servitravel</h3>
+            <p>No sabe nuestras rutas, tarifas, clientes ni procedimientos. Si le preguntas, va a inventar algo verosímil.</p>
+            <p class="tenue"><b>Consecuencia:</b> el contexto se lo das tú, en cada pedido.</p>
+          </article>
+          <article class="tarjeta roja">
+            <span class="icono">⚖️</span><h3>5. Repite sesgos</h3>
+            <p>Aprendió de textos escritos por personas, con sus prejuicios incluidos, y los reproduce sin notarlo.</p>
+            <p class="tenue"><b>Consecuencia:</b> no participa en ninguna decisión sobre personas.</p>
+          </article>
+          <article class="tarjeta">
+            <span class="icono">🧠</span><h3>Y una aclaración</h3>
+            <p>No te está espiando ni “aprendiendo de ti” mientras conversas. El entrenamiento ya ocurrió. Lo que sí pasa es que la información que escribes sale de la empresa, y eso se maneja con el semáforo.</p>
+          </article>
+        </div>
+
+        <div class="aviso peligro">
+          <h4>Cómo se ve una alucinación</h4>
+          <p>Le pides que resuma las demoras de la semana y te devuelve: <em>“el 34 % de los retrasos corresponde a congestión vehicular, según el informe de movilidad de la ciudad”</em>. Tú nunca diste un porcentaje ni mencionaste ningún informe. Los dos datos son inventados, y los dos suenan a informe serio. <strong>Ese es el riesgo: no se nota leyendo, se nota comparando con lo que entregaste.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 ----------------------------------------------------------- -->
+    <section class="seccion" id="glosario">
+      <div class="columna">
+        <p class="antetitulo t">Referencia</p>
+        <h2>Glosario de la sesión</h2>
+        <p class="entrada">Cada definición cabe en una frase. Está aquí para resolver una duda en veinte segundos, no para memorizarlo. Empieza por los conceptos básicos: con esos alcanza para trabajar.</p>
+
+        <div class="herramientas">
+          <div class="campo-busqueda">
+            <span class="lupa" aria-hidden="true">🔍</span>
+            <input type="search" id="glosario-busqueda" placeholder="Buscar un concepto…" aria-label="Buscar en el glosario">
+          </div>
+          <div class="filtros" id="glosario-filtros">
+            <button data-filtro="todos" aria-pressed="true">Todos</button>
+            <button data-filtro="basico" aria-pressed="false">Básico</button>
+            <button data-filtro="medio" aria-pressed="false">Medio</button>
+            <button data-filtro="avanzado" aria-pressed="false">Avanzado</button>
+          </div>
+        </div>
+
+        <div class="glosario" id="glosario-lista"></div>
+        <p class="sin-resultados oculto" id="glosario-vacio">No hay conceptos que coincidan con esa búsqueda.</p>
+      </div>
+    </section>
+
+    <!-- 10 ----------------------------------------------------------- -->
+    <section class="seccion" id="familias">
+      <div class="columna">
+        <p class="antetitulo">Qué puede hacer por ti</p>
+        <h2>Las seis familias de tareas</h2>
+        <p class="entrada">Todo lo que sirve para el trabajo diario cabe en estas seis. Si tu tarea no encaja en ninguna, probablemente no es una tarea para esta herramienta.</p>
+
+        <div class="rejilla r3" id="familias-lista"></div>
+
+        <div class="franja">
+          <span class="em" aria-hidden="true">🎯</span>
+          <p>Fíjate en lo que tienen en común: <b>todas trabajan sobre texto que tú entregas.</b> Ninguna consulta los sistemas de Servitravel ni decide nada por su cuenta.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 ----------------------------------------------------------- -->
+    <section class="seccion" id="areas">
+      <div class="columna">
+        <p class="antetitulo">Qué puede hacer por ti</p>
+        <h2>Tu área, paso a paso</h2>
+        <p class="entrada">Esta es la parte que hay que llevarse al puesto de trabajo. Elige tu área: vas a encontrar cinco cosas que puedes hacer hoy, la advertencia propia del área, el prompt listo para copiar y la demostración completa con datos ficticios.</p>
+
+        <div class="pestanas" id="areas-pestanas" role="tablist"></div>
+        <div class="panel-area" id="areas-panel" role="tabpanel"></div>
+
+        <div class="nota-facilitador facilitador">
+          <div class="titulo-panel">🎤 Cómo usarlo en sesión</div>
+          <ul>
+            <li>En el ciclo corto se muestran cinco áreas: recepción, operaciones, contabilidad, documental y gerencia. Las otras cuatro quedan disponibles para que cada quien las revise después.</li>
+            <li>Haz una sola demostración en vivo, la del minuto 36, y que sea del área con más gente en la sala.</li>
+            <li>Ten la captura de respaldo lista: si falla la conexión, se muestra y se sigue. Nunca se improvisa una demostración nueva.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 ----------------------------------------------------------- -->
+    <section class="seccion" id="claro">
+      <div class="columna">
+        <p class="antetitulo">Pedirle bien</p>
+        <h2>La fórmula C.L.A.R.O.</h2>
+        <p class="entrada">La diferencia entre un resultado inservible y uno que se puede usar casi nunca está en la herramienta: está en cómo se pide. Esta es la fórmula de Servitravel, y se aplica igual en las tres líneas de negocio.</p>
+
+        <div class="rejilla r5">
+          <article class="tarjeta"><div class="cifra">C</div><h3>Contexto</h3><p>Quién eres tú, qué hace la empresa y desde qué rol debe responder.</p></article>
+          <article class="tarjeta"><div class="cifra">L</div><h3>Labor</h3><p>Qué tiene que hacer exactamente, con un verbo claro.</p></article>
+          <article class="tarjeta"><div class="cifra">A</div><h3>Audiencia</h3><p>Para quién es el resultado: un cliente, un acudiente, un comité.</p></article>
+          <article class="tarjeta"><div class="cifra">R</div><h3>Restricciones</h3><p>Extensión, tono, qué no debe hacer, qué no puede inventar.</p></article>
+          <article class="tarjeta ambar"><div class="cifra">O</div><h3>Output</h3><p>En qué formato lo quieres: correo, tabla, lista de puntos.</p></article>
+        </div>
+
+        <div class="rejilla r2">
+          <article class="tarjeta roja">
+            <h3>❌ Pedido pobre</h3>
+            <div class="prompt simple" style="font-size:14px">Hazme un correo para un cliente que se quejó por una demora.</div>
+            <p class="tenue" style="margin-top:12px">Resultado: un correo genérico, largo, con disculpas exageradas y una promesa de compensación que nadie autorizó.</p>
+          </article>
+          <article class="tarjeta verde">
+            <h3>✅ Pedido C.L.A.R.O.</h3>
+            <div class="prompt simple" style="font-size:14px">Eres asistente de una empresa de transporte corporativo. Redacta un correo para [Cliente A], que reportó una demora de 20 minutos por cierre vial. Reconoce el hecho, explica la causa y di qué haremos. Máximo 120 palabras, tono formal y cordial. No ofrezcas descuentos ni compensaciones.</div>
+            <p class="tenue" style="margin-top:12px">Resultado: un borrador que se puede enviar después de revisarlo.</p>
+          </article>
+        </div>
+
+        <h3 class="bloque">Ármalo aquí</h3>
+        <p>Llena los cinco campos y mira cómo se construye el pedido. Al escribir, la página revisa si estás incluyendo algo que no debería salir de la empresa.</p>
+
+        <div class="constructor">
+          <div class="formulario">
+            <div class="campo">
+              <label for="claro-ejemplo">Cargar un ejemplo de mi área</label>
+              <select id="claro-ejemplo">
+                <option value="">— Empezar en blanco —</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="claro-contexto"><span class="inicial">C</span> Contexto</label>
+              <p class="ayuda">Quién es él, quién eres tú, de qué empresa hablamos.</p>
+              <textarea id="claro-contexto" rows="2" placeholder="Eres asistente de una empresa de transporte terrestre en Colombia. Trabajo en operaciones."></textarea>
+            </div>
+            <div class="campo">
+              <label for="claro-labor"><span class="inicial">L</span> Labor</label>
+              <p class="ayuda">El verbo y el objeto: redacta, resume, agrupa, extrae, revisa.</p>
+              <textarea id="claro-labor" rows="2" placeholder="agrupes por causa probable las demoras de la semana que te voy a pegar"></textarea>
+            </div>
+            <div class="campo">
+              <label for="claro-audiencia"><span class="inicial">A</span> Audiencia</label>
+              <p class="ayuda">Quién va a leer el resultado. Cambia el vocabulario por completo.</p>
+              <textarea id="claro-audiencia" rows="2" placeholder="el comité de gerencia, que no conoce el detalle de la operación"></textarea>
+            </div>
+            <div class="campo">
+              <label for="claro-restricciones"><span class="inicial">R</span> Restricciones</label>
+              <p class="ayuda">Extensión, tono y sobre todo qué NO debe hacer.</p>
+              <textarea id="claro-restricciones" rows="2" placeholder="máximo 150 palabras, tono formal, no inventes causas que no estén en el texto"></textarea>
+            </div>
+            <div class="campo">
+              <label for="claro-output"><span class="inicial">O</span> Output</label>
+              <p class="ayuda">El formato exacto de la respuesta.</p>
+              <textarea id="claro-output" rows="2" placeholder="una tabla con las columnas causa, cantidad y pregunta a investigar"></textarea>
+            </div>
+            <button class="boton solido" id="claro-limpiar" style="margin-top:8px">Limpiar campos</button>
+          </div>
+
+          <div class="resultado">
+            <h4>Tu pedido</h4>
+            <div class="prompt" id="claro-resultado"></div>
+            <div class="alerta-datos ok" id="claro-alerta"></div>
+          </div>
+        </div>
+
+        <div class="aviso clave">
+          <h4>La línea que casi nadie escribe y siempre conviene</h4>
+          <p>“Si te falta información para hacerlo bien, dímelo en vez de inventarla.” Esa sola frase convierte muchas alucinaciones en una pregunta, que es justo lo que uno quiere.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 ----------------------------------------------------------- -->
+    <section class="seccion" id="universales">
+      <div class="columna">
+        <p class="antetitulo">Pedirle bien</p>
+        <h2>Los cinco pedidos universales</h2>
+        <p class="entrada">Cinco formas básicas de pedir que resuelven la mayor parte del día, sin importar el área ni la línea de negocio. Cópialas y cámbiales lo que está entre corchetes.</p>
+        <div id="universales-lista"></div>
+
+        <div class="aviso">
+          <h4>Y el sexto, que no es un pedido sino una costumbre</h4>
+          <p><strong>Iterar.</strong> La primera respuesta casi nunca es la buena, y no hay que borrarla: se le responde. “Más corto.” “Cámbiame el tono.” “Ponlo en tabla.” “Quítale la última parte.” Ahí es donde aparece el resultado que sí se puede usar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14 ----------------------------------------------------------- -->
+    <section class="seccion" id="biblioteca">
+      <div class="columna">
+        <p class="antetitulo">Pedirle bien</p>
+        <h2>Biblioteca de prompts</h2>
+        <p class="entrada">Todos los pedidos de la sesión en un solo lugar, con su advertencia de seguridad. Filtra por línea de negocio o busca por palabra.</p>
+
+        <div class="herramientas">
+          <div class="campo-busqueda">
+            <span class="lupa" aria-hidden="true">🔍</span>
+            <input type="search" id="prompts-busqueda" placeholder="Buscar por área, tarea o palabra…" aria-label="Buscar prompts">
+          </div>
+          <div class="filtros" id="prompts-filtros">
+            <button data-filtro="todos" aria-pressed="true">Todos</button>
+            <button data-filtro="todas" aria-pressed="false">Transversales</button>
+            <button data-filtro="emp" aria-pressed="false">Empresarial</button>
+            <button data-filtro="esc" aria-pressed="false">Escolar</button>
+            <button data-filtro="alq" aria-pressed="false">Alquiler</button>
+          </div>
+        </div>
+
+        <div id="prompts-lista"></div>
+        <p class="sin-resultados oculto" id="prompts-vacio">No hay prompts que coincidan con esa búsqueda.</p>
+      </div>
+    </section>
+
+    <!-- 15 ----------------------------------------------------------- -->
+    <section class="seccion" id="regla-oro">
+      <div class="columna">
+        <p class="antetitulo r">Reglas de tránsito</p>
+        <h2>La regla de oro</h2>
+        <p class="entrada">Si de esta hora solo te llevas una frase, que sea esta. Funciona sin saber nada de tecnología y resuelve casi todas las dudas.</p>
+
+        <div class="cita ancha">
+          Si no lo enviarías por correo a un proveedor externo sin firmar un acuerdo de confidencialidad, no lo escribas en una IA.
+          <cite>Regla de oro · Servitravel</cite>
+        </div>
+
+        <p class="bloque">Funciona porque no exige entender cómo opera la herramienta. Todo el mundo sabe intuitivamente qué se le manda a alguien de afuera y qué no. Eso es todo lo que hay que evaluar, en los tres segundos antes de pegar algo.</p>
+
+        <div class="rejilla r3">
+          <article class="tarjeta verde">
+            <h3>Qué sí, casi siempre</h3>
+            <p>Tus propios textos, procedimientos genéricos, documentos públicos, preguntas de conocimiento general, información ya anonimizada.</p>
+          </article>
+          <article class="tarjeta ambar">
+            <h3>Qué primero se anonimiza</h3>
+            <p>Mensajes de clientes, observaciones de operación, reportes internos: sirven mucho, pero se limpian antes de pegarlos.</p>
+          </article>
+          <article class="tarjeta roja">
+            <h3>Qué nunca</h3>
+            <p>Datos de menores, hojas de vida, cifras financieras reales, tarifas negociadas, credenciales y claves.</p>
+          </article>
+        </div>
+
+        <div class="aviso peligro">
+          <h4>El error más común, y no es el que uno espera</h4>
+          <p>No es pegar un documento confidencial a propósito. Es pegar un mensaje de WhatsApp “para que lo redacte bonito” sin fijarse en que adentro venía el nombre completo del cliente, su celular y la dirección de la casa. La información sensible casi siempre entra de contrabando, dentro de algo que parecía inofensivo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16 ----------------------------------------------------------- -->
+    <section class="seccion" id="semaforo">
+      <div class="columna">
+        <p class="antetitulo r">Reglas de tránsito</p>
+        <h2>El semáforo de la información</h2>
+        <p class="entrada">La regla de oro se aplica con tres colores. Es la herramienta de decisión que se dicta completa en la sesión 3; aquí va el criterio y una práctica para calibrarlo.</p>
+
+        <div class="semaforo-leyenda">
+          <article class="luz v">
+            <div class="bombillo"></div>
+            <h3>Verde · libre</h3>
+            <p>Escríbelo sin pensarlo dos veces.</p>
+            <ul>
+              <li>Textos que escribiste tú</li>
+              <li>Procedimientos genéricos</li>
+              <li>Documentos públicos</li>
+              <li>Preguntas de conocimiento general</li>
+            </ul>
+          </article>
+          <article class="luz a">
+            <div class="bombillo"></div>
+            <h3>Amarillo · anonimiza primero</h3>
+            <p>La tarea es válida; los datos hay que limpiarlos.</p>
+            <ul>
+              <li>Mensajes de clientes</li>
+              <li>Observaciones de operación</li>
+              <li>Reportes con placas o nombres</li>
+              <li>Cifras internas sin agregar</li>
+            </ul>
+          </article>
+          <article class="luz r">
+            <div class="bombillo"></div>
+            <h3>Rojo · nunca</h3>
+            <p>Ni anonimizado, ni “solo por esta vez”.</p>
+            <ul>
+              <li>Datos de menores de edad</li>
+              <li>Hojas de vida y datos de personal</li>
+              <li>Estados financieros reales</li>
+              <li>Tarifas negociadas y márgenes</li>
+              <li>Claves, credenciales y accesos</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="ejercicio-semaforo">
+          <div class="marcador">
+            <h3 style="margin:0">Práctica: clasifica el caso</h3>
+            <span class="cuenta" id="semaforo-cuenta"></span>
+          </div>
+          <p class="caso-semaforo" id="semaforo-caso"></p>
+          <div class="botones-luz" id="semaforo-botones">
+            <button class="bv" data-luz="verde">🟢 Verde · lo escribo</button>
+            <button class="ba" data-luz="amarillo">🟡 Amarillo · anonimizo</button>
+            <button class="br" data-luz="rojo">🔴 Rojo · no lo escribo</button>
+          </div>
+          <div id="semaforo-retro" class="oculto"></div>
+          <button class="boton solido oculto" id="semaforo-siguiente" style="margin-top:18px">Siguiente caso →</button>
+        </div>
+
+        <div class="aviso">
+          <h4>Cuando dudes entre dos colores</h4>
+          <p>Gana siempre el más restrictivo. Un servicio que se demora cuesta una disculpa; un dato de un menor publicado fuera de la empresa cuesta mucho más que eso.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17 ----------------------------------------------------------- -->
+    <section class="seccion" id="verificar">
+      <div class="columna">
+        <p class="antetitulo r">Reglas de tránsito</p>
+        <h2>Qué se verifica siempre</h2>
+        <p class="entrada">La persona sigue al volante. Esto es lo que significa en la práctica, tarea por tarea.</p>
+
+        <div class="rejilla r3">
+          <article class="tarjeta verde">
+            <span class="icono">🤝</span><h3>Confía · revisión rápida</h3>
+            <p>Borradores de texto, reescrituras de tono, lluvias de ideas, estructuras de documento. Se lee una vez y se ajusta.</p>
+          </article>
+          <article class="tarjeta ambar">
+            <span class="icono">🔎</span><h3>Verifica · dato por dato</h3>
+            <p>Cifras, fechas, nombres, normas, cálculos, resúmenes de documentos que vas a firmar. Se contrasta con la fuente antes de usar.</p>
+          </article>
+          <article class="tarjeta roja">
+            <span class="icono">⛔</span><h3>No la uses</h3>
+            <p>Decisiones sobre personas, información confidencial, cualquier cosa donde el criterio profesional sea lo que se está pagando.</p>
+          </article>
+        </div>
+
+        <h3 class="bloque">Las seis reglas de oro, completas</h3>
+        <div class="tabla-envoltura">
+          <table>
+            <thead><tr><th style="width:8%">#</th><th>Regla</th></tr></thead>
+            <tbody>
+              <tr><td class="clave">1</td><td>La IA es un borrador, no una autoridad.</td></tr>
+              <tr><td class="clave">2</td><td>Si no lo enviarías a un externo, no lo escribas en una IA.</td></tr>
+              <tr><td class="clave">3</td><td>Contexto y formato: sin eso, adivina.</td></tr>
+              <tr><td class="clave">4</td><td>Verifica todo dato que vayas a firmar.</td></tr>
+              <tr><td class="clave">5</td><td>Itera: la primera respuesta nunca es la buena.</td></tr>
+              <tr><td class="clave">6</td><td>Tú decides, tú respondes.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="franja">
+          <span class="em" aria-hidden="true">✍️</span>
+          <p><b>La IA hace el borrador; la persona firma.</b> Y el que firma es el que responde ante el cliente, ante la empresa y ante la autoridad. Esa parte no se delega.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 18 ----------------------------------------------------------- -->
+    <section class="seccion" id="practica">
+      <div class="columna">
+        <p class="antetitulo v">Practica</p>
+        <h2>Ejercicios de la sesión</h2>
+        <p class="entrada">El objetivo de la hora no es que entiendas la Inteligencia Artificial: es que salgas habiéndola usado en algo tuyo. Estos son los ejercicios, con el enunciado tal como se entrega.</p>
+        <div id="ejercicios-lista"></div>
+      </div>
+    </section>
+
+    <!-- 19 ----------------------------------------------------------- -->
+    <section class="seccion" id="repaso">
+      <div class="columna">
+        <p class="antetitulo v">Practica</p>
+        <h2>Repaso de seis preguntas</h2>
+        <p class="entrada">Responde sin volver arriba. Cada respuesta te dice por qué, que es lo que importa.</p>
+        <div id="quiz-lista"></div>
+      </div>
+    </section>
+
+    <!-- 20 ----------------------------------------------------------- -->
+    <section class="seccion" id="cierre">
+      <div class="columna">
+        <p class="antetitulo">Antes de irte</p>
+        <h2>Lo que te llevas de hoy</h2>
+
+        <div class="rejilla r3">
+          <article class="tarjeta"><div class="cifra">01</div><h3>Una definición</h3><p>Aprende de ejemplos, no de reglas escritas. Y cuando se equivoca, se equivoca sonando bien.</p></article>
+          <article class="tarjeta"><div class="cifra">02</div><h3>Una fórmula</h3><p>C.L.A.R.O.: contexto, labor, audiencia, restricciones, output. Con eso cambia el resultado.</p></article>
+          <article class="tarjeta ambar"><div class="cifra">03</div><h3>Una regla</h3><p>Si no lo enviarías a un proveedor externo sin acuerdo de confidencialidad, no lo escribas en una IA.</p></article>
+        </div>
+
+        <div class="aviso clave">
+          <h4>Tu tarea de esta semana · 10 minutos</h4>
+          <p>Abre la herramienta y hazle tres preguntas sobre lo que quieras: cocina, fútbol, un trámite. No tiene que ser de trabajo. El objetivo no es aprender nada nuevo, es perder el miedo a la pantalla en blanco. En la sesión 2 arrancamos preguntando quién la hizo.</p>
+        </div>
+
+        <h3 class="bloque">Qué viene en la sesión 2</h3>
+        <div class="rejilla r2">
+          <article class="tarjeta">
+            <h3>Pedirle bien y no creerle todo</h3>
+            <p>La fórmula C.L.A.R.O. completa, con el mismo pedido mal escrito y bien escrito lado a lado, y el resultado de cada uno en pantalla. Y el módulo de alucinaciones: por qué inventa y cómo cazarlo.</p>
+          </article>
+          <article class="tarjeta ambar">
+            <h3>Y en la sesión 3</h3>
+            <p>Tu trabajo, con IA: el semáforo completo con casos de las tres líneas, el módulo de tu área en detalle y el criterio para decidir en treinta segundos si una tarea es para la herramienta o no.</p>
+          </article>
+        </div>
+
+        <div class="franja teal">
+          <span class="em" aria-hidden="true">🚗</span>
+          <p>No necesitas entender cómo funciona un motor para conducir. <b>Pero sí necesitas saber las reglas de tránsito.</b> Eso es todo lo que vamos a hacer en las próximas dos sesiones.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 21 ----------------------------------------------------------- -->
+    <section class="seccion" id="facilitador">
+      <div class="columna">
+        <p class="antetitulo">Solo para quien dicta</p>
+        <h2>Guion, tiempos y montaje</h2>
+        <p class="entrada">Este bloque es material del facilitador. Actívalo con el botón <strong>Modo facilitador</strong> de la barra superior (o con la tecla <kbd>F</kbd>) para ver además las notas que están repartidas por toda la página.</p>
+
+        <div class="aviso clave"><h4>📋 El guion completo está aparte</h4><p>Lo que vas a decir palabra por palabra, bloque por bloque, con los tiempos y las salidas para cuando algo se sale del guion, está en <a href="guion.html"><strong>guion.html</strong></a>. Esa página se imprime en dos páginas y se lee de reojo mientras dictas.</p></div>
+
+        <div class="facilitador">
+          <h3 class="bloque">Cronograma de los 60 minutos</h3>
+          <div class="tabla-envoltura">
+            <table>
+              <thead><tr><th style="width:14%">Minuto</th><th>Bloque</th></tr></thead>
+              <tbody id="cronograma-lista"></tbody>
+            </table>
+          </div>
+
+          <h3 class="bloque">Si vas retrasado, recorta en este orden</h3>
+          <div class="tabla-envoltura">
+            <table>
+              <thead><tr><th>Qué recortar</th><th style="width:18%">Ganas</th></tr></thead>
+              <tbody id="recortes-lista"></tbody>
+            </table>
+          </div>
+
+          <div class="aviso peligro">
+            <h4>Lo que no se recorta nunca</h4>
+            <p id="no-se-recorta"></p>
+          </div>
+
+          <h3 class="bloque">Checklist de montaje</h3>
+          <div class="nota-facilitador">
+            <div class="titulo-panel">Antes de que entre el primero</div>
+            <ul id="montaje-lista"></ul>
+          </div>
+
+          <h3 class="bloque">Preguntas difíciles de la sala</h3>
+          <div class="tabla-envoltura">
+            <table>
+              <thead><tr><th style="width:34%">Pregunta</th><th>Cómo responderla</th></tr></thead>
+              <tbody id="preguntas-dificiles"></tbody>
+            </table>
+          </div>
+
+          <div class="aviso">
+            <h4>Si no estás seguro de un detalle técnico</h4>
+            <p>No lo inventes. Di: <em>“no te lo quiero responder de memoria porque estas herramientas cambian cada mes. Lo verifico en la documentación oficial y te lo confirmo antes de la próxima sesión”</em>. Y anótalo. Cumplirlo la semana siguiente vale más que haber respondido bien en el momento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== PIE ============================== -->
+    <footer class="pie">
+      <div class="columna">
+        <div>
+          <h4>Tú al Volante</h4>
+          <p>IA aplicada al día a día de Servitravel. Ciclo corto de tres sesiones de una hora, para todas las áreas y las tres líneas de negocio.</p>
+        </div>
+        <div>
+          <h4>Ir a</h4>
+          <a href="#areas">Tu área, paso a paso</a>
+          <a href="#biblioteca">Biblioteca de prompts</a>
+          <a href="#glosario">Glosario</a>
+          <a href="#semaforo">El semáforo</a>
+          <a href="guion.html">Guion del presentador</a>
+        </div>
+        <div>
+          <h4>Recordatorio</h4>
+          <p>Todos los datos de esta página son ficticios. Cuando practiques, haz lo mismo: marcadores entre corchetes y nada de información real de clientes, pasajeros, estudiantes o conductores.</p>
+        </div>
+        <p class="legal">Material interno · Servitravel · <span id="anio"></span> · Facilita Diego, analista de transporte. El módulo de herramientas envejece rápido: se revisa cada tres meses contra la documentación oficial de cada proveedor.</p>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<button class="arriba" id="arriba" aria-label="Volver arriba">↑</button>
+<div class="aviso-flotante" id="aviso" role="status" aria-live="polite"></div>
+
+<script src="assets/js/datos-curso.js"></script>
+<script src="assets/js/datos-areas.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

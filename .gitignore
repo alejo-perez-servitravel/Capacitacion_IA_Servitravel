@@ -1,0 +1,32 @@
+# Basura del sistema operativo
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+
+# Archivos temporales de Office y editores
+~$*
+*.tmp
+*.bak
+*~
+
+# Configuración local de editores
+.vscode/
+.idea/
+*.code-workspace
+
+# Configuración local de Claude Code (no se comparte)
+.claude/settings.local.json
+
+# Exportaciones locales que no se versionan
+*.pptx
+*.pdf
+salida/
+
+# Documentos internos de trabajo: NO se publican en el repositorio público.
+# Viven solo en el equipo del facilitador.
+01_Contexto_Maestro.md
+instrucciones.txt
+
+# Versión anterior en diapositivas (histórico, ya no se mantiene)
+tu_al_volante_plataforma.html
