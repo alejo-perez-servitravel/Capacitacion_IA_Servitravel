@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guía rápida · Tú al Volante · Servitravel</title>
+<meta name="description" content="Material de apoyo de la capacitación en Inteligencia Artificial de Servitravel: la fórmula C.L.A.R.O., prompts listos para copiar y las reglas de uso seguro.">
+<link rel="stylesheet" href="assets/css/estilos.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='none' stroke='%23D97919' stroke-width='12'/><circle cx='50' cy='50' r='18' fill='%230E7C86'/></svg>">
+</head>
+<body>
+
+<!-- ============================ BARRA SUPERIOR ============================ -->
+<header class="barra">
+  <button class="boton-barra abrir-menu" id="btn-menu" aria-label="Abrir el índice">☰</button>
+
+  <a href="#inicio" class="marca">
+    <span class="rueda" aria-hidden="true"></span>
+    <span>Tú al <em>Volante</em>
+      <small>Servitravel · Guía rápida</small>
+    </span>
+  </a>
+
+  <div class="separador"></div>
+
+  <a href="index.html" class="boton-barra" title="Volver al material completo de la sesión 1">📖 <span>Sesión completa</span></a>
+  <button class="boton-barra" id="btn-imprimir" title="Imprimir o guardar en PDF">🖨</button>
+</header>
+
+<div class="velo" id="velo"></div>
+
+<div class="envoltorio">
+
+  <!-- ========================= ÍNDICE LATERAL ========================= -->
+  <aside class="lateral" id="lateral">
+    <nav class="nav" id="nav" aria-label="Contenido de la guía">
+      <p class="nav-grupo">Lo mínimo</p>
+      <a href="#inicio"><span class="indice">01</span><span>Para qué es esta guía</span></a>
+      <a href="#esencial"><span class="indice">02</span><span>Lo que no se te olvida</span></a>
+
+      <p class="nav-grupo">Cómo se pide</p>
+      <a href="#claro"><span class="indice">03</span><span>La fórmula C.L.A.R.O.</span></a>
+      <a href="#plantilla"><span class="indice">04</span><span>La plantilla universal</span></a>
+      <a href="#universales"><span class="indice">05</span><span>Los cinco pedidos</span></a>
+
+      <p class="nav-grupo">Para copiar</p>
+      <a href="#ejemplos"><span class="indice">06</span><span>Ejemplos por área</span></a>
+      <a href="#segunda-vuelta"><span class="indice">07</span><span>La segunda vuelta</span></a>
+
+      <p class="nav-grupo">Reglas de tránsito</p>
+      <a href="#semaforo"><span class="indice">08</span><span>Semáforo de la información</span></a>
+      <a href="#verificar"><span class="indice">09</span><span>Antes de enviar</span></a>
+    </nav>
+
+    <div class="nav-pie">
+      <p>Todos los ejemplos de esta guía usan datos ficticios. Ninguno corresponde a un cliente, pasajero o servicio real.</p>
+    </div>
+  </aside>
+
+  <!-- ============================ CONTENIDO ============================ -->
+  <main class="contenido">
+
+    <!-- 01 ----------------------------------------------------------- -->
+    <section class="seccion" id="inicio">
+      <div class="columna">
+        <div class="portada">
+          <p class="antetitulo">Material de apoyo · Sesión 1</p>
+          <h1>Guía rápida</h1>
+          <p class="entrada">Lo que necesitas para empezar a usar la Inteligencia Artificial en tu trabajo: cómo se pide, qué se puede escribir y qué se revisa antes de enviar. Todo lo demás se puede consultar después.</p>
+
+          <div class="fichas">
+            <div class="ficha"><b>Para quién</b>Todo el equipo de Servitravel</div>
+            <div class="ficha"><b>Cómo se usa</b>Copia, pega y ajusta</div>
+            <div class="ficha"><b>Se imprime</b>Botón 🖨 de la barra</div>
+          </div>
+        </div>
+
+        <p class="entrada" style="margin-top:var(--e6)">Esta guía no reemplaza la sesión: es lo que te llevas de ella. Está hecha para tenerla abierta mientras trabajas, no para leerla de corrido. Los prompts se copian con un clic y se ajustan a tu caso.</p>
+
+        <div class="aviso">
+          <h4>Cómo sacarle provecho</h4>
+          <p>Ve directo a <b>Ejemplos por área</b>, busca el de tu puesto y úsalo como está la primera vez. Cuando veas cómo responde, vuelve a la <b>fórmula C.L.A.R.O.</b> para entender por qué está escrito así y empezar a hacer los tuyos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 ----------------------------------------------------------- -->
+    <section class="seccion" id="esencial">
+      <div class="columna">
+        <p class="antetitulo">Lo mínimo</p>
+        <h2>Lo que no se te puede olvidar</h2>
+        <p class="entrada">Si de toda la sesión solo te quedaran tres ideas, que sean estas. Las tres explican los errores más caros que se cometen con estas herramientas.</p>
+
+        <div class="rejilla r3">
+          <article class="tarjeta">
+            <div class="cifra">01</div>
+            <h3>Es un borrador, no una autoridad</h3>
+            <p>Te entrega un punto de partida para que tú lo corrijas. No te entrega una respuesta para que tú la reenvíes.</p>
+          </article>
+          <article class="tarjeta ambar">
+            <div class="cifra">02</div>
+            <h3>Se equivoca sonando bien</h3>
+            <p>Cuando un programa normal falla, se cae o muestra un error. Cuando esta falla, te entrega un párrafo impecable que dice algo falso.</p>
+          </article>
+          <article class="tarjeta roja">
+            <div class="cifra">03</div>
+            <h3>Tú decides y tú respondes</h3>
+            <p>El que firma es el que responde ante el cliente, ante la empresa y ante la autoridad. Esa parte no se delega.</p>
+          </article>
+        </div>
+
+        <div class="franja">
+          <span class="em" aria-hidden="true">⚖️</span>
+          <p><b>La IA optimiza plausibilidad, no veracidad.</b> Está entrenada para que la respuesta suene correcta, no para que sea correcta. Por eso una cifra inventada llega con el mismo tono de seguridad que una verdadera.</p>
+        </div>
+
+        <h3 class="bloque">La regla de oro</h3>
+        <div class="cita ancha">
+          Si no lo enviarías por correo a un proveedor externo sin firmar un acuerdo de confidencialidad, no lo escribas en una IA.
+          <cite>Es la regla que resuelve el 90 % de las dudas sobre qué se puede escribir.</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 ----------------------------------------------------------- -->
+    <section class="seccion" id="claro">
+      <div class="columna">
+        <p class="antetitulo t">Cómo se pide</p>
+        <h2>La estructura de un buen pedido: C.L.A.R.O.</h2>
+        <p class="entrada">La diferencia entre un resultado inservible y uno que se puede usar casi nunca está en la herramienta: está en cómo se pide. Estos son los cinco elementos que cambian el resultado.</p>
+
+        <div class="rejilla r5">
+          <article class="tarjeta"><div class="cifra">C</div><h3>Contexto</h3><p>Quién eres tú, qué hace la empresa y desde qué rol debe responder.</p></article>
+          <article class="tarjeta"><div class="cifra">L</div><h3>Labor</h3><p>Qué tiene que hacer exactamente, con un verbo claro.</p></article>
+          <article class="tarjeta"><div class="cifra">A</div><h3>Audiencia</h3><p>Para quién es el resultado: un cliente, un acudiente, un comité.</p></article>
+          <article class="tarjeta"><div class="cifra">R</div><h3>Restricciones</h3><p>Extensión, tono, qué no debe hacer, qué no puede inventar.</p></article>
+          <article class="tarjeta ambar"><div class="cifra">O</div><h3>Output</h3><p>En qué formato lo quieres: correo, tabla, lista de puntos.</p></article>
+        </div>
+
+        <h3 class="bloque">La misma tarea, pedida de dos maneras</h3>
+
+        <div class="rejilla r2">
+          <article class="tarjeta roja">
+            <h3>❌ Pedido pobre</h3>
+            <div class="prompt simple sin-copiar" style="font-size:14px">Hazme un correo para un cliente que se quejó por una demora.</div>
+            <p class="tenue" style="margin-top:12px">Devuelve un correo genérico, largo, con disculpas exageradas y una promesa de compensación que nadie autorizó.</p>
+          </article>
+          <article class="tarjeta verde">
+            <h3>✅ Pedido C.L.A.R.O.</h3>
+            <div class="prompt simple sin-copiar" style="font-size:14px">Eres asistente de una empresa de transporte corporativo. Redacta un correo para [Cliente A], que reportó una demora de 20 minutos por cierre vial. Reconoce el hecho, explica la causa y di qué haremos. Máximo 120 palabras, tono formal y cordial. No ofrezcas descuentos ni compensaciones.</div>
+            <p class="tenue" style="margin-top:12px">Devuelve un borrador que se puede enviar después de revisarlo.</p>
+          </article>
+        </div>
+
+        <div class="aviso clave">
+          <h4>El elemento que más se olvida</h4>
+          <p>Las <b>restricciones</b>, y dentro de ellas lo que <b>no</b> debe hacer. «No ofrezcas descuentos», «no inventes causas», «no hagas cálculos nuevos». Sin esa línea, la herramienta llena los vacíos con lo que le parece razonable, y lo que le parece razonable a veces le cuesta dinero a la empresa.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 ----------------------------------------------------------- -->
+    <section class="seccion" id="plantilla">
+      <div class="columna">
+        <p class="antetitulo t">Cómo se pide</p>
+        <h2>La plantilla universal</h2>
+        <p class="entrada">El punto de partida de cualquier pedido. Si dudas, empieza por aquí: reemplaza lo que está entre corchetes y borra lo que no aplique.</p>
+
+        <div class="prompt">Eres asistente de una empresa de transporte terrestre en Colombia.
+Trabajo en la línea [Empresarial / Escolar / Alquiler], en el área de [tu área].
+
+Necesito que [escribas / resumas / ordenes / revises] lo siguiente:
+
+[pega aquí tu texto, con datos ficticios o entre corchetes]
+
+Devuélvemelo en [correo breve / tabla / lista de puntos], en español,
+máximo [120] palabras, tono [formal y cordial].
+Si falta información para hacerlo bien, dímelo en vez de inventarla.</div>
+        <p class="consejo"><span aria-hidden="true">💡</span> <span>La última línea es la que más trabaja: sin ella, la herramienta prefiere inventar un dato antes que admitir que le falta.</span></p>
+
+        <div class="aviso peligro">
+          <h4>Antes de pegar cualquier cosa</h4>
+          <p>Nombres de clientes, pasajeros, estudiantes o conductores, cédulas, celulares, placas y tarifas <b>no se escriben</b>. Se reemplazan por <b>[Cliente A]</b>, <b>[Conductor A]</b>, <b>[Vehículo 1]</b>, <b>[Ruta 7]</b>, <b>[tarifa acordada]</b>. El resultado es igual de bueno y el riesgo desaparece.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 ----------------------------------------------------------- -->
+    <section class="seccion" id="universales">
+      <div class="columna">
+        <p class="antetitulo t">Cómo se pide</p>
+        <h2>Los cinco pedidos universales</h2>
+        <p class="entrada">Sirven en cualquier área y con cualquier texto. Con estos cinco se resuelve la mayor parte del trabajo diario, sin aprender nada más.</p>
+
+        <div class="ficha-prompt">
+          <h3>1 · Reescribir</h3>
+          <p class="uso">Cuando el contenido ya está, pero el tono no.</p>
+          <div class="prompt">Reescribe esto en tono [formal y cordial], máximo [80] palabras: [pega tu texto]</div>
+        </div>
+
+        <div class="ficha-prompt">
+          <h3>2 · Resumir</h3>
+          <p class="uso">Cuando hay que leer algo largo y decidir hoy.</p>
+          <div class="prompt">Resume esto en [5] puntos, para alguien que no conoce el tema: [pega tu texto]</div>
+        </div>
+
+        <div class="ficha-prompt">
+          <h3>3 · Tabular</h3>
+          <p class="uso">Cuando la información está suelta y hay que compararla.</p>
+          <div class="prompt">Convierte esto en una tabla con las columnas [A], [B] y [C]: [pega tu texto]</div>
+        </div>
+
+        <div class="ficha-prompt">
+          <h3>4 · Explicar</h3>
+          <p class="uso">Cuando algo se entiende a medias y da pena preguntar.</p>
+          <div class="prompt">Explícame [término] como si nunca hubiera trabajado en esto, con un ejemplo del sector transporte</div>
+        </div>
+
+        <div class="ficha-prompt">
+          <h3>5 · Revisar</h3>
+          <p class="uso">Antes de enviar cualquier cosa importante.</p>
+          <div class="prompt">Revisa este texto y dime qué falta, qué está ambiguo y qué entendería mal un cliente: [pega tu texto]</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 ----------------------------------------------------------- -->
+    <section class="seccion" id="ejemplos">
+      <div class="columna">
+        <p class="antetitulo v">Para copiar</p>
+        <h2>Ejemplos por área</h2>
+        <p class="entrada">Busca el de tu puesto. Están escritos para usarse tal como están: reemplazas lo de los corchetes y listo. Cada uno trae la advertencia propia del área, que no es la misma para todos.</p>
+
+        <!-- Recepción -->
+        <div class="ficha-prompt">
+          <h3>📞 Recepción · De solicitud desordenada a confirmación completa</h3>
+          <p class="uso">El mensaje que llega suelto por WhatsApp, convertido en un correo ordenado y en la lista de lo que faltó preguntar.</p>
+          <div class="prompt">Eres asistente de una empresa de transporte terrestre corporativo en Colombia.
+
+Este es un mensaje que nos llegó de un cliente, tal como llegó:
+
+"[pega aquí el mensaje, con el nombre cambiado por Cliente A]"
+
+Haz dos cosas:
+
+1. Redacta un correo de confirmación breve y cordial, en español,
+   con los datos organizados en una lista. Lo que no esté en el mensaje
+   déjalo entre corchetes, no lo inventes.
+
+2. Debajo del correo, lista las preguntas que tengo que hacerle al cliente
+   para poder programar el servicio.
+
+Máximo 150 palabras el correo. Tono formal y cordial, sin exageraciones.</div>
+          <p class="consejo"><span aria-hidden="true">💡</span> <span>La instrucción «no lo inventes, déjalo entre corchetes» es la que evita que se invente una hora de recogida que nadie dijo.</span></p>
+          <p class="cuidado"><b>Cuidado:</b> el nombre del cliente, su teléfono y su correo no se escriben. La tarifa nunca se le pregunta a la IA: se consulta en el sistema.</p>
+        </div>
+
+        <!-- Operaciones -->
+        <div class="ficha-prompt">
+          <h3>🚐 Operaciones y despacho · Agrupar las demoras por causa probable</h3>
+          <p class="uso">Las observaciones sueltas del turno, ordenadas para ver el patrón que se repite y no solo el caso de ayer.</p>
+          <div class="prompt">Eres analista de operaciones de una empresa de transporte terrestre.
+
+Te paso una lista de servicios que se demoraron esta semana, con la
+observación que escribió el despachador. Son datos ficticios.
+
+Haz lo siguiente:
+
+1. Agrúpalos por causa probable.
+2. Ordena los grupos de mayor a menor frecuencia.
+3. Para cada grupo, propón una pregunta que yo debería investigar.
+
+No inventes causas que no estén sugeridas en las observaciones.
+Si algo no se puede clasificar, ponlo en "sin información suficiente".
+
+Lista:
+[pega aquí, usando Servicio 1, Servicio 2...
+ sin placas, sin nombres de conductores ni de clientes]</div>
+          <p class="consejo"><span aria-hidden="true">💡</span> <span>«No inventes causas que no estén sugeridas» convierte la respuesta en un ordenamiento de lo que tú ya sabes, no en una especulación.</span></p>
+          <p class="cuidado"><b>Cuidado:</b> sin placas, sin nombres de conductores y sin nombres de estudiantes. En la Línea Escolar la regla no tiene versión intermedia: un nombre más un colegio más una hora de recogida identifica a un menor.</p>
+        </div>
+
+        <!-- Contabilidad -->
+        <div class="ficha-prompt">
+          <h3>📊 Contabilidad y finanzas · Comentario que explica la variación del mes</h3>
+          <p class="uso">El texto del informe mensual, redactado a partir de variaciones en porcentaje y no de las cifras reales.</p>
+          <div class="prompt">Eres analista financiero de una empresa de transporte terrestre con tres
+líneas de negocio: Empresarial, Escolar y Alquiler.
+
+Con estas cifras ficticias, redacta el comentario que explica la variación
+del mes para un comité de gerencia. Máximo 150 palabras, tono formal.
+
+Cifras:
+[pega aquí las variaciones en porcentaje, ficticias o entre corchetes]
+
+Reglas:
+- No inventes causas que yo no te haya dado.
+- Separa el dato de la interpretación: primero qué pasó, después qué creemos.
+- Si falta información para explicar algo, dilo explícitamente en el texto.
+- No hagas ningún cálculo nuevo: usa solo los números que te di.</div>
+          <p class="consejo"><span aria-hidden="true">💡</span> <span>«No hagas ningún cálculo nuevo» es la línea más importante de este prompt. Sin ella, la herramienta suma y se equivoca con total seguridad.</span></p>
+          <p class="cuidado"><b>Cuidado:</b> el estado de resultados con cifras reales no se pega. Se trabaja con variaciones en porcentaje o con datos de ejemplo.</p>
+        </div>
+
+        <!-- Documental -->
+        <div class="ficha-prompt">
+          <h3>📄 Área documental · Extraer fechas y obligaciones de un documento largo</h3>
+          <p class="uso">Un contrato o un pliego convertido en una tabla de vencimientos, sin tener que leerlo tres veces.</p>
+          <div class="prompt">Eres asistente del área documental de una empresa de transporte.
+
+Del siguiente texto, extrae una tabla con estas columnas:
+
+| Fecha o plazo | Qué vence u obliga | A quién obliga | Cláusula |
+
+Reglas:
+- No resumas el documento: solo extrae lo que esté escrito.
+- Si una fecha es ambigua, escríbela igual y márcala como "ambigua".
+- Si algo no aparece en el texto, escribe "no indicado". No lo deduzcas.
+- Al final, lista aparte los puntos que a tu juicio requieren revisión humana.
+
+Texto:
+[pega aquí el documento, con nombres y cifras reemplazados por corchetes]</div>
+          <p class="consejo"><span aria-hidden="true">💡</span> <span>«No resumas: solo extrae» evita que la herramienta interprete una cláusula. Interpretar es tu trabajo; ubicar es el suyo.</span></p>
+          <p class="cuidado"><b>Cuidado:</b> un documento público, como un pliego publicado por una entidad, se puede pegar. Tu borrador de propuesta, no.</p>
+        </div>
+
+        <!-- Gerencia -->
+        <div class="ficha-prompt">
+          <h3>🧭 Gerencia · Preparar los puntos de un comité</h3>
+          <p class="uso">Las notas sueltas convertidas en una agenda con preguntas, no con decisiones tomadas.</p>
+          <div class="prompt">Eres asistente de gerencia de una empresa de transporte terrestre.
+
+Con la siguiente información, prepárame para un comité de [45] minutos:
+
+1. Los tres puntos que debo tratar, en orden de importancia, con una
+   frase de justificación cada uno.
+2. Para cada punto, la pregunta concreta que debo hacer en la sala.
+3. Un riesgo que probablemente nadie va a mencionar.
+4. Qué información me falta para decidir bien.
+
+Información:
+[pega aquí tus notas, con datos ficticios o entre corchetes]
+
+No propongas decisiones: propón preguntas.</div>
+          <p class="consejo"><span aria-hidden="true">💡</span> <span>«No propongas decisiones: propón preguntas» cambia por completo la utilidad de la respuesta. La decisión sigue siendo tuya, con tu información, que es más que la que le diste.</span></p>
+          <p class="cuidado"><b>Cuidado:</b> condiciones comerciales, márgenes y cifras de resultados no entran en el pedido. Van entre corchetes.</p>
+        </div>
+
+        <p class="tenue" style="margin-top:var(--e5)">¿Tu área no está aquí? En el <a href="index.html#areas">material completo de la sesión</a> están las nueve, incluidas Comercial, Recursos Humanos, Mantenimiento y flota, y Sistemas.</p>
+      </div>
+    </section>
+
+    <!-- 07 ----------------------------------------------------------- -->
+    <section class="seccion" id="segunda-vuelta">
+      <div class="columna">
+        <p class="antetitulo v">Para copiar</p>
+        <h2>La segunda vuelta</h2>
+        <p class="entrada">La primera respuesta casi nunca es la buena, y eso es normal: no es que la herramienta falle, es que todavía no sabe qué querías. Corregir es más rápido que volver a escribir el pedido desde cero.</p>
+
+        <div class="rejilla r3">
+          <article class="tarjeta">
+            <span class="icono">✂️</span><h3>Si salió largo</h3>
+            <p>«Más corto, máximo [60] palabras, sin perder el punto principal.»</p>
+          </article>
+          <article class="tarjeta">
+            <span class="icono">🎚️</span><h3>Si el tono no es</h3>
+            <p>«Más directo y menos formal, como le escribiría a un cliente de confianza.»</p>
+          </article>
+          <article class="tarjeta">
+            <span class="icono">📐</span><h3>Si el formato no sirve</h3>
+            <p>«Lo mismo, pero en una tabla con las columnas [A], [B] y [C].»</p>
+          </article>
+        </div>
+
+        <h3 class="bloque">Pídele que revise su propia respuesta</h3>
+        <p>Es el filtro que caza lo que se inventó en la primera vuelta. No reemplaza tu verificación, pero atrapa bastante antes de que llegue a tus manos.</p>
+
+        <div class="prompt">Revisa la respuesta que acabas de darme y dime:
+
+1. Qué afirmaciones de esa respuesta NO salen de la información que yo te di.
+2. Qué datos tendría yo que verificar antes de usar esto.
+3. Qué información falta para que la respuesta sea confiable.
+
+No vuelvas a redactar el texto: solo señala.</div>
+        <p class="consejo"><span aria-hidden="true">💡</span> <span>Que la herramienta revise su propio trabajo ayuda, pero es un filtro más, no el último. El último eres tú.</span></p>
+
+        <div class="aviso">
+          <h4>Lo que no sirve preguntarle</h4>
+          <p>«¿Estás segura?» no sirve. Responde con la misma seguridad cuando acierta y cuando se equivoca, así que la respuesta no te dice nada. Lo que sí sirve es preguntarle <b>qué parte no salió de la información que le diste</b>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 ----------------------------------------------------------- -->
+    <section class="seccion" id="semaforo">
+      <div class="columna">
+        <p class="antetitulo r">Reglas de tránsito</p>
+        <h2>El semáforo de la información</h2>
+        <p class="entrada">La duda no es «¿puedo usar la IA para esto?», sino «¿puedo escribir esto aquí?». El semáforo responde esa pregunta en tres colores.</p>
+
+        <div class="rejilla r3">
+          <article class="tarjeta verde">
+            <span class="icono">🟢</span><h3>Verde · libre</h3>
+            <p>Texto tuyo sin datos de nadie, conocimiento general, documentos públicos, procedimientos genéricos.</p>
+          </article>
+          <article class="tarjeta ambar">
+            <span class="icono">🟡</span><h3>Amarillo · anonimiza primero</h3>
+            <p>La tarea es correcta, pero hay que quitar los identificadores antes. Con eso queda en verde.</p>
+          </article>
+          <article class="tarjeta roja">
+            <span class="icono">🔴</span><h3>Rojo · nunca</h3>
+            <p>Datos de menores, cifras financieras reales, condiciones comerciales, datos personales de terceros, contraseñas.</p>
+          </article>
+        </div>
+
+        <h3 class="bloque">Casos concretos del día a día</h3>
+        <div class="tabla-envoltura">
+          <table>
+            <thead><tr><th style="width:14%">Color</th><th>Situación</th><th style="width:38%">Por qué</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="clave">🟢 Verde</td>
+                <td>Reescribir en tono formal un correo que tú mismo redactaste, sin nombres ni cifras.</td>
+                <td>Es tu propio texto genérico. Es el uso más seguro y el más frecuente.</td>
+              </tr>
+              <tr>
+                <td class="clave">🟢 Verde</td>
+                <td>Pedirle que explique qué es una nota crédito, con un ejemplo del sector.</td>
+                <td>Es conocimiento general: no hay información de la empresa en el pedido.</td>
+              </tr>
+              <tr>
+                <td class="clave">🟡 Amarillo</td>
+                <td>Pegar el mensaje de un cliente con su nombre, empresa y celular para convertirlo en confirmación.</td>
+                <td>El uso es correcto, pero primero se anonimiza: [Cliente A] y [contacto].</td>
+              </tr>
+              <tr>
+                <td class="clave">🟡 Amarillo</td>
+                <td>Pegar las observaciones del despachador con placas y nombres de conductores.</td>
+                <td>Muy útil, pero reemplaza placas y nombres por [Vehículo 1] y [Conductor A].</td>
+              </tr>
+              <tr>
+                <td class="clave">🔴 Rojo</td>
+                <td>Pegar la lista de estudiantes de [Ruta 7] con nombres y direcciones de recogida.</td>
+                <td>Son datos de menores. Nombre más colegio más hora identifica a un niño. No hay versión intermedia.</td>
+              </tr>
+              <tr>
+                <td class="clave">🔴 Rojo</td>
+                <td>Pegar el estado de resultados del mes con las cifras reales.</td>
+                <td>Son cifras financieras reales. Se trabaja con variaciones en porcentaje.</td>
+              </tr>
+              <tr>
+                <td class="clave">🔴 Rojo</td>
+                <td>Pegar la hoja de vida de un aspirante para compararla con el perfil del cargo.</td>
+                <td>Doble problema: datos personales de un tercero y una decisión sobre una persona.</td>
+              </tr>
+              <tr>
+                <td class="clave">🔴 Rojo</td>
+                <td>Pegar la tarifa acordada con un cliente para redactar la renovación.</td>
+                <td>Una condición negociada es justo lo que un competidor querría conocer. Va entre corchetes.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="aviso clave">
+          <h4>Cuando dudes entre amarillo y rojo</h4>
+          <p>La respuesta correcta es siempre la más conservadora. Anonimizar cuesta treinta segundos; explicar una fuga de información cuesta mucho más.</p>
+        </div>
+
+        <div class="franja">
+          <span class="em" aria-hidden="true">📎</span>
+          <p><b>La información sensible casi siempre entra de contrabando.</b> No es que alguien pegue un documento confidencial a propósito: es pegar un mensaje «para que lo redacte bonito» sin fijarse en que adentro venía el nombre completo del cliente, su celular y la dirección de la casa.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 ----------------------------------------------------------- -->
+    <section class="seccion" id="verificar">
+      <div class="columna">
+        <p class="antetitulo r">Reglas de tránsito</p>
+        <h2>Antes de enviar</h2>
+        <p class="entrada">La persona sigue al volante. Esto es lo que significa en la práctica, tarea por tarea.</p>
+
+        <div class="rejilla r3">
+          <article class="tarjeta verde">
+            <span class="icono">🤝</span><h3>Confía · revisión rápida</h3>
+            <p>Borradores de texto, reescrituras de tono, lluvias de ideas, estructuras de documento. Se lee una vez y se ajusta.</p>
+          </article>
+          <article class="tarjeta ambar">
+            <span class="icono">🔎</span><h3>Verifica · dato por dato</h3>
+            <p>Cifras, fechas, nombres, normas, cálculos, resúmenes de documentos que vas a firmar. Se contrasta con la fuente.</p>
+          </article>
+          <article class="tarjeta roja">
+            <span class="icono">⛔</span><h3>No la uses</h3>
+            <p>Decisiones sobre personas, información confidencial, cualquier cosa donde el criterio profesional sea lo que se está pagando.</p>
+          </article>
+        </div>
+
+        <h3 class="bloque">Los cuatro chequeos de treinta segundos</h3>
+        <ol class="lista-num">
+          <li><b>¿Hay algún dato que yo no le di?</b> Una cifra exacta, una norma con número, una fecha concreta. Cuanto más específico es algo que tú no entregaste, más probable es que sea inventado.</li>
+          <li><b>¿Quedó algún corchete sin llenar?</b> Un <span style="font-family:var(--mono)">[por confirmar]</span> que se va en el correo al cliente es peor que no haberlo enviado.</li>
+          <li><b>¿Prometió algo que yo no autoricé?</b> Descuentos, compensaciones, plazos, disponibilidad de vehículos.</li>
+          <li><b>¿El tono corresponde a quien lo va a leer?</b> No todos los clientes reciben el mismo saludo, y un acudiente no lee como un comité.</li>
+        </ol>
+
+        <h3 class="bloque">Las seis reglas de oro</h3>
+        <div class="tabla-envoltura">
+          <table>
+            <thead><tr><th style="width:8%">#</th><th>Regla</th></tr></thead>
+            <tbody>
+              <tr><td class="clave">1</td><td>La IA es un borrador, no una autoridad.</td></tr>
+              <tr><td class="clave">2</td><td>Si no lo enviarías a un externo, no lo escribas en una IA.</td></tr>
+              <tr><td class="clave">3</td><td>Contexto y formato: sin eso, adivina.</td></tr>
+              <tr><td class="clave">4</td><td>Verifica todo dato que vayas a firmar.</td></tr>
+              <tr><td class="clave">5</td><td>Itera: la primera respuesta nunca es la buena.</td></tr>
+              <tr><td class="clave">6</td><td>Tú decides, tú respondes.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="franja">
+          <span class="em" aria-hidden="true">✍️</span>
+          <p><b>La IA hace el borrador; la persona firma.</b> Y el que firma es el que responde ante el cliente, ante la empresa y ante la autoridad. Esa parte no se delega.</p>
+        </div>
+
+        <div class="aviso ok">
+          <h4>Tu tarea de esta semana · 10 minutos</h4>
+          <p>Abre la herramienta y hazle tres preguntas sobre lo que quieras: cocina, fútbol, un trámite. No tiene que ser de trabajo. El objetivo no es aprender nada nuevo, es perder el miedo a la pantalla en blanco.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================ PIE ================================ -->
+    <footer class="pie">
+      <div class="columna">
+        <div>
+          <h4>Seguir aprendiendo</h4>
+          <a href="index.html">Material completo de la sesión 1</a>
+          <a href="index.html#areas">Las nueve áreas, paso a paso</a>
+          <a href="index.html#glosario">Glosario de la sesión</a>
+        </div>
+        <div>
+          <h4>Lo que te llevas</h4>
+          <p>Una definición, una fórmula y una regla. Con eso alcanza para empezar mañana.</p>
+        </div>
+        <div>
+          <h4>Si algo no funciona</h4>
+          <p>Escríbele a quien dictó la capacitación. Un prompt que no sirvió es material para la siguiente sesión, no un problema tuyo.</p>
+        </div>
+        <p class="legal">Tú al Volante · IA aplicada al día a día de Servitravel · <span id="anio"></span> · Todos los ejemplos usan datos ficticios: ninguno corresponde a un cliente, pasajero, estudiante, conductor, vehículo o tarifa real.</p>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<button class="arriba" id="arriba" aria-label="Volver arriba">↑</button>
+<div class="aviso-flotante" id="aviso-flotante" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  'use strict';
+  var $  = function(s){ return document.querySelector(s); };
+  var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+
+  function esc(t){
+    return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  /* Los campos entre corchetes se resaltan en ámbar. */
+  function resaltarCampos(t){
+    return esc(t).replace(/\[([^\[\]]+)\]/g, '<span class="campo">[$1]</span>');
+  }
+
+  var tiempoAviso;
+  function avisar(mensaje){
+    var caja = $('#aviso-flotante');
+    caja.textContent = mensaje;
+    caja.classList.add('visible');
+    clearTimeout(tiempoAviso);
+    tiempoAviso = setTimeout(function(){ caja.classList.remove('visible'); }, 2000);
+  }
+
+  function copiar(texto){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(texto).then(
+        function(){ avisar('Prompt copiado'); },
+        function(){ copiaDeRespaldo(texto); }
+      );
+    } else {
+      copiaDeRespaldo(texto);
+    }
+  }
+
+  /* Para navegadores viejos o cuando la página se abre como archivo local. */
+  function copiaDeRespaldo(texto){
+    var area = document.createElement('textarea');
+    area.value = texto;
+    area.setAttribute('readonly','');
+    area.style.position = 'fixed';
+    area.style.opacity = '0';
+    document.body.appendChild(area);
+    area.select();
+    try{
+      document.execCommand('copy');
+      avisar('Prompt copiado');
+    }catch(e){
+      avisar('Selecciona el texto y cópialo con Ctrl+C');
+    }
+    document.body.removeChild(area);
+  }
+
+  /* Prepara cada bloque de prompt: resalta corchetes y agrega el botón.
+     Los marcados .sin-copiar son ejemplos de comparación, no se copian. */
+  $$('.prompt').forEach(function(bloque){
+    var texto = bloque.textContent;
+    bloque.innerHTML = resaltarCampos(texto);
+
+    if(bloque.classList.contains('sin-copiar')) return;
+
+    var boton = document.createElement('button');
+    boton.className = 'copiar';
+    boton.type = 'button';
+    boton.textContent = 'Copiar';
+    boton.addEventListener('click', function(){ copiar(texto); });
+    bloque.appendChild(boton);
+  });
+
+  /* Índice lateral: marca la sección visible. */
+  var enlaces = $$('#nav a');
+  var porId = {};
+  enlaces.forEach(function(a){ porId[a.getAttribute('href').slice(1)] = a; });
+
+  if(window.IntersectionObserver){
+    var observador = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(e){
+        if(!e.isIntersecting) return;
+        enlaces.forEach(function(a){ a.classList.remove('activo'); });
+        if(porId[e.target.id]) porId[e.target.id].classList.add('activo');
+      });
+    }, {rootMargin:'-20% 0px -70% 0px', threshold:0});
+    $$('main .seccion').forEach(function(s){ observador.observe(s); });
+  }
+
+  /* Menú lateral en pantallas pequeñas. */
+  var cerrarMenu = function(){ document.body.classList.remove('menu-abierto'); };
+  $('#btn-menu').addEventListener('click', function(){ document.body.classList.toggle('menu-abierto'); });
+  $('#velo').addEventListener('click', cerrarMenu);
+  enlaces.forEach(function(a){ a.addEventListener('click', cerrarMenu); });
+
+  /* Volver arriba. */
+  var arriba = $('#arriba');
+  window.addEventListener('scroll', function(){
+    arriba.classList.toggle('visible', window.scrollY > 700);
+  }, {passive:true});
+  arriba.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+  /* Imprimir y año del pie. */
+  $('#btn-imprimir').addEventListener('click', function(){ window.print(); });
+  $('#anio').textContent = new Date().getFullYear();
+
+  /* Esc cierra el menú. */
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') cerrarMenu();
+  });
+})();
+</script>
+
+</body>
+</html>

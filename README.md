@@ -5,11 +5,16 @@ Material de la capacitación interna de Servitravel en Inteligencia Artificial.
 
 ## Abrir la capacitación
 
-**→ [Abrir el material de la Sesión 1](https://alejo-perez-servitravel.github.io/Capacitacion_IA_Servitravel/)**
-· [Guion del facilitador](https://alejo-perez-servitravel.github.io/Capacitacion_IA_Servitravel/guion.html)
+| | |
+|---|---|
+| **[Material de la Sesión 1](https://alejo-perez-servitravel.github.io/Capacitacion_IA_Servitravel/)** | La sesión completa, para recorrer o consultar |
+| **[Guía rápida](https://alejo-perez-servitravel.github.io/Capacitacion_IA_Servitravel/guia-rapida.html)** | Material de apoyo del participante: lo esencial y los prompts listos para copiar |
+| [Guion del facilitador](https://alejo-perez-servitravel.github.io/Capacitacion_IA_Servitravel/guion.html) | El texto palabra por palabra de los 60 minutos |
 
 Funciona en el navegador, en computador o en celular. No hay que instalar nada
 ni tener cuenta de GitHub.
+
+**Para enviarle a los participantes**, el enlace es el de la guía rápida.
 
 ### Para tenerlo sin internet
 
@@ -20,7 +25,7 @@ Botón verde **Code** ▸ **Download ZIP**, se descomprime y se hace doble clic 
 
 | Quién | Cómo |
 |---|---|
-| **Participante** | Recorre la página de arriba abajo, o entra por el índice de la izquierda. En *Tu área, paso a paso* está el prompt de su puesto, listo para copiar. |
+| **Participante** | Para el día a día, la **guía rápida**: lo esencial en una página, con los prompts listos para copiar. Si quiere el detalle, recorre el material completo o entra por el índice de la izquierda. |
 | **Facilitador** | Abre `guion.html` para el texto palabra por palabra de los 60 minutos. En el material, activa **Modo facilitador** en la barra superior (o tecla <kbd>F</kbd>): aparecen el guion, las claves de los ejercicios, el cronograma minuto a minuto, el plan de recortes y las respuestas a las preguntas difíciles. |
 | **Quien imprime** | Botón 🖨 de la barra. Los estilos de impresión ya están hechos e incluyen siempre el material del facilitador. |
 
@@ -45,6 +50,7 @@ Atajos: <kbd>/</kbd> buscar · <kbd>F</kbd> modo facilitador · <kbd>Esc</kbd> c
 
 ```
 index.html                   Sesión 1 · estructura y contenido narrativo
+guia-rapida.html             Material de apoyo del participante (autónomo)
 guion.html                   Guion del presentador, palabra por palabra
 assets/css/estilos.css       Sistema visual: tokens, componentes, responsive, impresión
 assets/css/guion.css         Estilos del guion (letra grande, dice/hace, impresión)
